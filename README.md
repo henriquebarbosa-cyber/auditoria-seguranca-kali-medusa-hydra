@@ -1,18 +1,18 @@
-# 🔐 Auditoria de Segurança: Testes de Força Bruta com Kali Linux, Medusa e Hydra
+# 🔐 Auditoria de Segurança: Testes de Autenticação com Kali Linux, Medusa e Hydra
 
-![Kali Linux](https://img.shields.io/badge/Kali%20Linux-Security-blue?logo=kalilinux)
-![Medusa](https://img.shields.io/badge/Tool-Medusa-red)
-![Hydra](https://img.shields.io/badge/Tool-THC%20Hydra-orange)
-![VirtualBox](https://img.shields.io/badge/VirtualBox-Virtualization-blue?logo=virtualbox)
-![Status](https://img.shields.io/badge/Projeto-Em%20Desenvolvimento-yellow)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-Security-blue)
+![Medusa](https://img.shields.io/badge/Medusa-Auditoria-orange)
+![Hydra](https://img.shields.io/badge/THC_Hydra-Authentication-red)
+![VirtualBox](https://img.shields.io/badge/VirtualBox-Lab-blue)
+![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
 
 ## 📌 Sobre o Projeto
 
-Este projeto foi desenvolvido como parte do desafio prático da Digital Innovation One (DIO), com o objetivo de estudar técnicas de auditoria de segurança e identificar vulnerabilidades relacionadas à autenticação de usuários.
+Este projeto foi desenvolvido como parte do desafio prático da **Digital Innovation One (DIO)**, com o objetivo de estudar técnicas de auditoria de segurança e identificar vulnerabilidades relacionadas à autenticação de usuários.
 
-A proposta consiste na utilização do Kali Linux em conjunto com ferramentas especializadas em testes de autenticação, como Medusa e THC Hydra, em ambientes virtuais vulneráveis e controlados.
+A proposta consiste na utilização do Kali Linux em conjunto com ferramentas especializadas em testes de autenticação, como **Medusa** e **THC Hydra**, em ambientes virtuais vulneráveis e controlados.
 
-Durante o desenvolvimento, são explorados conceitos de ataques de força bruta, automação de tentativas de autenticação, password spraying e análise de mecanismos de proteção.
+Durante o desenvolvimento, foram explorados conceitos de ataques de força bruta, automação de tentativas de autenticação, password spraying e análise de mecanismos de proteção.
 
 O projeto também aborda medidas de prevenção e mitigação, demonstrando a importância de políticas de segurança para proteger serviços, aplicações e credenciais.
 
@@ -71,30 +71,37 @@ O ambiente de testes utiliza máquinas virtuais configuradas em uma rede isolada
 
 Estudo de vulnerabilidades relacionadas à autenticação no serviço FTP.
 
-Utilização das ferramentas Medusa e/ou THC Hydra para simulações controladas de tentativas de autenticação com credenciais fictícias.
+Foi utilizada a ferramenta Medusa para realizar testes controlados de autenticação com credenciais de laboratório.
 
 **Objetivos:**
 - Compreender o funcionamento de tentativas automatizadas.
 - Identificar riscos relacionados a senhas fracas.
 - Observar a resposta do serviço às tentativas de autenticação.
+- Verificar o estabelecimento de conexão após a autenticação.
 
 ### 2. Testes em aplicação Web (DVWA)
 
 Estudo de mecanismos de autenticação em aplicações Web por meio do ambiente DVWA.
 
+Foi utilizada a ferramenta THC Hydra no cenário de teste.
+
 **Objetivos:**
 - Compreender os riscos de formulários de login vulneráveis.
 - Estudar a automação de tentativas de autenticação.
 - Analisar mecanismos de proteção contra ataques automatizados.
+- Observar os resultados da autenticação no ambiente controlado.
 
-### 3. Password Spraying em SMB
+### 3. Testes de autenticação em SMB
 
-Estudo do conceito de password spraying aplicado ao serviço SMB em ambiente controlado.
+Estudo de autenticação no serviço SMB em ambiente controlado.
+
+Foi utilizada a ferramenta Medusa para realizar testes de autenticação no serviço.
 
 **Objetivos:**
-- Compreender a enumeração de usuários.
-- Estudar os riscos de utilização de senhas comuns.
-- Identificar possíveis falhas nas políticas de autenticação.
+- Compreender os riscos relacionados ao uso de senhas comuns.
+- Observar o comportamento do serviço durante os testes.
+- Verificar o estabelecimento de conexão com a máquina.
+- Estudar a importância de políticas adequadas de autenticação.
 
 ## ⚙️ Ferramentas de Auditoria: Medusa e Hydra
 
@@ -128,7 +135,7 @@ A seguir estão os registros das atividades realizadas durante os testes no ambi
 
 ### 1. Conexão FTP
 
-![Conexão FTP](images/conexção-ftp.PNG)
+![Conexão FTP](images/conex%C3%A7%C3%A3o-ftp.PNG)
 
 Registro da conexão FTP estabelecida com a máquina de laboratório.
 
@@ -162,53 +169,64 @@ Execução do Medusa para testar credenciais de acesso ao serviço SMB.
 
 ### 6. Conexão SMB
 
-![Conexão SMB](images/smb-conexcão.PNG)
+![Conexão SMB](images/smb-conexc%C3%A3o.PNG)
 
 Registro da conexão estabelecida com a máquina por meio do serviço SMB.
-
----
 
 **Observação:** Todos os testes foram realizados em ambiente de laboratório controlado, com finalidade educacional.
 
 ## 📊 Resultados e Análise
 
-Nesta seção serão documentados os resultados obtidos durante os testes de auditoria.
+Durante a execução das atividades no laboratório, foram realizados testes de autenticação nos serviços FTP, SMB e na aplicação Web DVWA.
 
-A análise deverá considerar:
+Os registros obtidos demonstram os seguintes resultados:
 
-- Comportamento dos serviços durante as tentativas de autenticação.
-- Identificação de credenciais vulneráveis, quando aplicável.
-- Diferenças observadas entre Medusa e Hydra.
-- Mecanismos de proteção identificados.
-- Possíveis riscos para os serviços analisados.
+### FTP
+- Utilização da ferramenta Medusa para testes de autenticação.
+- Identificação de credenciais aceitas pelo serviço no ambiente de laboratório.
+- Estabelecimento de conexão FTP após a autenticação.
 
-Os resultados apresentados deverão corresponder aos testes efetivamente executados no laboratório.
+### DVWA
+- Acesso à página de autenticação da aplicação.
+- Utilização da ferramenta THC Hydra no cenário de teste.
+- Identificação das credenciais `admin` e `password` no ambiente utilizado.
+
+### SMB
+- Utilização da ferramenta Medusa para testes de autenticação.
+- Registro das tentativas realizadas no serviço SMB.
+- Estabelecimento de conexão com a máquina por meio do serviço SMB.
+
+### Análise geral
+
+As atividades demonstraram como credenciais fracas podem representar riscos à segurança dos serviços e aplicações.
+
+Os testes também permitiram conhecer as funcionalidades das ferramentas Medusa e THC Hydra e compreender a importância de mecanismos de proteção, como políticas de senhas fortes, limitação de tentativas de autenticação e monitoramento de logs.
 
 ## 🛡️ Medidas de Mitigação e Prevenção
 
 Para reduzir os riscos relacionados a ataques de força bruta e password spraying, são recomendadas as seguintes medidas:
 
-**1. Políticas de senhas**
+### 1. Políticas de senhas
 - Utilizar senhas fortes e exclusivas.
 - Evitar senhas comuns e previsíveis.
-- Implementar políticas de troca e proteção de credenciais adequadas.
+- Implementar políticas adequadas de proteção de credenciais.
 
-**2. Autenticação**
+### 2. Autenticação
 - Implementar autenticação multifator (MFA).
 - Adotar mecanismos seguros de autenticação.
 - Restringir tentativas consecutivas de login.
 
-**3. Monitoramento**
+### 3. Monitoramento
 - Monitorar logs de autenticação.
 - Identificar padrões incomuns de acesso.
 - Configurar alertas para tentativas suspeitas.
 
-**4. Segurança de rede**
+### 4. Segurança de rede
 - Desabilitar serviços desnecessários.
 - Restringir o acesso aos serviços por firewall.
 - Utilizar protocolos seguros de comunicação.
 
-**5. Segurança em aplicações Web**
+### 5. Segurança em aplicações Web
 - Implementar limitação de tentativas de login.
 - Utilizar mecanismos contra automação abusiva.
 - Implementar controles de sessão e autenticação.
@@ -216,13 +234,25 @@ Para reduzir os riscos relacionados a ataques de força bruta e password sprayin
 
 ## 📚 Aprendizados Adquiridos
 
-O desenvolvimento deste projeto proporciona uma experiência prática sobre auditoria de segurança e avaliação de mecanismos de autenticação.
+O desenvolvimento deste projeto proporcionou uma experiência prática sobre auditoria de segurança e avaliação de mecanismos de autenticação.
 
-A utilização das ferramentas Medusa e THC Hydra permite compreender como tentativas automatizadas podem explorar credenciais vulneráveis.
+A utilização das ferramentas Medusa e THC Hydra permitiu compreender como tentativas automatizadas podem identificar credenciais vulneráveis.
 
-Também reforça a importância de ambientes controlados para estudos de segurança, da documentação técnica e da aplicação de medidas preventivas.
+Também reforçou a importância de ambientes controlados para estudos de segurança, da documentação técnica e da aplicação de medidas preventivas.
 
-Além disso, o projeto contribui para o desenvolvimento de conhecimentos em Linux, redes, segurança da informação e análise de vulnerabilidades.
+Além disso, o projeto contribuiu para o desenvolvimento de conhecimentos em Linux, redes, segurança da informação e análise de vulnerabilidades.
+
+## 🎓 Conclusão
+
+A realização deste projeto proporcionou uma experiência prática sobre auditoria de segurança e avaliação de mecanismos de autenticação.
+
+Por meio do Kali Linux, Medusa e THC Hydra, foi possível conhecer ferramentas utilizadas em testes de autenticação e observar seus resultados em um ambiente virtual controlado.
+
+As atividades com FTP, SMB e DVWA reforçaram a importância da utilização de senhas fortes, mecanismos de proteção contra tentativas automatizadas e monitoramento dos serviços.
+
+O projeto contribuiu para ampliar meus conhecimentos em Linux, redes de computadores, segurança da informação e práticas de cibersegurança.
+
+A experiência também reforçou a importância de realizar testes somente em ambientes próprios e autorizados.
 
 ## ⚠️ Aviso de Segurança
 
@@ -235,17 +265,18 @@ Não utilize as ferramentas apresentadas contra sistemas, redes ou serviços de 
 ## 📁 Estrutura do Repositório
 
 ```text
-auditoria-seguranca-kali-medusa/
+auditoria-seguranca-kali-medusa-hydra/
 │
 ├── README.md
 │
 ├── images/
-│   ├── ambiente-virtualbox.png
-│   ├── kali-linux.png
-│   ├── metasploitable.png
-│   ├── medusa.png
-│   ├── hydra.png
-│   └── dvwa.png
+│   ├── conexção-ftp.PNG
+│   ├── DVWA.PNG
+│   ├── hydra-dvwa.PNG
+│   ├── medusa-ftp.PNG
+│   ├── medusa-ftp-ataque.PNG
+│   ├── medusa-smb.PNG
+│   └── smb-conexcão.PNG
 │
 ├── wordlists/
 │   ├── users.txt
@@ -257,12 +288,12 @@ auditoria-seguranca-kali-medusa/
 
 ## 🔗 Referências e Documentação
 
-- Kali Linux: https://www.kali.org/
-- Medusa: https://github.com/jmk-foofus/medusa
-- THC Hydra: https://github.com/vanhauser-thc/thc-hydra
-- Metasploitable: https://sourceforge.net/projects/metasploitable/
-- DVWA: https://github.com/digininja/DVWA
-- VirtualBox: https://www.virtualbox.org/
+- [Kali Linux](https://www.kali.org/)
+- [Medusa](https://github.com/jmk-foofus/medusa)
+- [THC Hydra](https://github.com/vanhauser-thc/thc-hydra)
+- [Metasploitable 2](https://sourceforge.net/projects/metasploitable/)
+- [DVWA](https://github.com/digininja/DVWA)
+- [Oracle VirtualBox](https://www.virtualbox.org/)
 
 ## 👨‍💻 Autor
 
