@@ -122,20 +122,53 @@ A THC Hydra é uma ferramenta de auditoria de autenticação que permite testar 
 
 As duas ferramentas são importantes no contexto de auditoria de segurança e permitem compreender diferentes abordagens para avaliação de mecanismos de autenticação.
 
-## 📸 Evidências dos Testes
+## 📸 Evidências do Laboratório
 
-As evidências visuais serão organizadas na pasta `images/`, contendo registros da configuração do laboratório e dos procedimentos realizados.
+A seguir estão os registros das atividades realizadas durante os testes no ambiente controlado, demonstrando o uso das ferramentas Medusa e Hydra e as conexões com os serviços FTP e SMB.
 
-Exemplos de evidências:
+### 1. Conexão FTP
 
-- Inicialização do Kali Linux.
-- Configuração das máquinas virtuais no VirtualBox.
-- Configuração da rede Host-Only.
-- Inicialização do Metasploitable 2.
-- Ambiente DVWA.
-- Execução dos testes com Medusa.
-- Execução dos testes com Hydra.
-- Resultados e observações obtidos.
+![Conexão FTP](images/conexção-ftp.PNG)
+
+Registro da conexão FTP estabelecida com a máquina de laboratório.
+
+### 2. Aplicação DVWA
+
+![Página de login DVWA](images/DVWA.PNG)
+
+Acesso à página de login da aplicação vulnerável DVWA.
+
+### 3. Teste com Hydra na DVWA
+
+![Execução Hydra DVWA](images/hydra-dvwa.PNG)
+
+Registro da execução do Hydra no ambiente DVWA, no qual foram identificadas as credenciais `admin` e `password`.
+
+### 4. Testes com Medusa no FTP
+
+![Medusa FTP](images/medusa-ftp.PNG)
+
+Utilização da ferramenta Medusa para testar credenciais de acesso ao serviço FTP.
+
+![Medusa FTP ataque](images/medusa-ftp-ataque.PNG)
+
+Registro adicional da execução do teste com Medusa contra o serviço FTP.
+
+### 5. Testes com Medusa no SMB
+
+![Medusa SMB](images/medusa-smb.PNG)
+
+Execução do Medusa para testar credenciais de acesso ao serviço SMB.
+
+### 6. Conexão SMB
+
+![Conexão SMB](images/smb-conexcão.PNG)
+
+Registro da conexão estabelecida com a máquina por meio do serviço SMB.
+
+---
+
+**Observação:** Todos os testes foram realizados em ambiente de laboratório controlado, com finalidade educacional.
 
 ## 📊 Resultados e Análise
 
